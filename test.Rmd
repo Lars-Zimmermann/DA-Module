@@ -1,0 +1,31 @@
+---
+title: "First steps in R Markdown"
+author: "Lars Zimmermann"
+date: "5.5.2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+```
+
+## Introduction
+
+These are my first steps with _R Markdown_ and I learned the basics in the **DA module**. The [materials](https://cory-whitney.shinyapps.io/Decision_Analysis_Course/) of this course can be find at:  <https://cory-whitney.shinyapps.io/Decision_Analysis_Course/>.
+
+I will show some visualizations on the R **diamonds** data set. This data set contains information about the attributes of diamonds `r nrow(diamonds)`. 
+
+```{r diamonds}
+summary(diamonds)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

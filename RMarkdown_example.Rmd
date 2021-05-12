@@ -1,0 +1,165 @@
+---
+title: "RMarkdown_example"
+author: "Cory Whitney"
+date: "`r Sys.Date()`"
+output:
+  html_document: default
+---
+
+Avoid absolute paths! Use relative paths (relative to your .Rmd file).
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#install.packages("ethnobotanyR")
+library(ethnobotanyR)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r part_dat}
+part_data <- read.csv("participants_data.csv")
+str(part_data)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(part_data$km_home_to_office)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Including Figures
+
+You can also embed images, for example:
+
+```{r}
+knitr::include_graphics('RMarkdown-figure/hex-rmarkdown.png')
+```
+
+and in other ways
+
+![Markdown hex sticker](RMarkdown-figure/hex-rmarkdown.png)
+
+![](RMarkdown-figure/hex-rmarkdown.png)
+## Emphasis
+
+*italic*   **bold**
+
+_italic_   __bold__
+
+`r_code`
+
+## Headers
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+#### Header 4
+
+## Lists
+
+## Unordered List:
+
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+
+## Ordered List:
+
+1. Item 1
+1. Item 2
+1. Item 3
+    a. Item 3a
+    a. Item 3b
+
+## R Code Chunks
+
+R code will be evaluated and printed
+
+```{r}
+summary(cars$dist)
+summary(cars$speed)
+```
+
+## Inline R Code
+
+There were `r nrow(cars)` cars studied
+
+## Links
+
+Use a plain http address or add a link to a phrase:
+
+http://example.com
+
+[linked phrase](http://example.com)
+
+
+## Blockquotes
+A friend once said:
+
+> It's always better to give
+> than to receive.
+
+Plain Code Blocks
+
+Plain code blocks are displayed in a fixed-width font but not evaluated
+
+```
+This text is displayed verbatim / preformatted
+```
+
+## Inline Code
+
+We defined the `add` function to
+compute the sum of two numbers.
+
+## LaTeX Equations
+
+**Inline equation:**
+
+$equation$
+
+**Display equation:**
+
+$$ equation $$
+Horizontal Rule / Page Break
+
+Three or more asterisks or dashes:
+
+******
+
+------
+
+## Tables
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+## Manual Line Breaks
+End a line with two or more spaces, 
+otherwise it all goes on the same line.
+
+Roses are red,  
+subscript <sub>in <span style="color:blue">blue</span> </sub>
+
+<u>underline</u>
+
+superscript^2^  
+
+~~and strikethrough~~
+
+
